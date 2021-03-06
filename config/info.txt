@@ -1,0 +1,15 @@
+This application uses firebase.
+You can sign up for firebase here ...
+You will need SDK, and to create a file called firebase.js and export like so:
+
+// config/firebase.js
+
+export default {
+  apiKey: "...,
+  authDomain: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "...",
+  measurementId: "..."
+};

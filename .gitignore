@@ -10,6 +10,7 @@ lerna-debug.log*
 public/app.js
 
 # APIS
+config/firebase.js
 
 # Env
 .env

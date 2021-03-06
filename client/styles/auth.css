@@ -6,11 +6,19 @@
   width: 25rem;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .form-title {
   font-size: 1.5rem;
   margin: 1em;
+}
+
+#error-msg {
+  position: absolute;
+  color: #ff4545;
+  font-size: .7rem;
+  margin-bottom: 12em;
 }
 
 .auth form {
