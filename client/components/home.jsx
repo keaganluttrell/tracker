@@ -4,23 +4,11 @@ import { useAuth } from './auth-hook';
 import '../styles/auth'
 
 export default function Home() {
+  const auth = useAuth();
+  console.log('HOME', auth);
   return (
     <div id="home">
       HOME
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-        </ul>
-      </div>
-
     </div>
   );
 }

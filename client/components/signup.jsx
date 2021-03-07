@@ -1,25 +1,35 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, useLocation, useHistory } from 'react-router-dom';
 import { useAuth } from './auth-hook';
 import '../styles/auth'
 
 export default function Signup() {
+  const history = useHistory();
   const auth = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [msg, setMsg] = useState('');
+  const location = useLocation();
+  const { from } = location.state || { from: { pathname: "/" } };
 
   const signup = () => {
+    history.replace(from);
     if (password === confirm) {
       auth.signup(email, password);
+      <Redirect to={{ pathname: "/", state: { from: location } }} />
+      // catch errors here
     } else {
       setMsg('Passwords do not match');
+      setEmail('');
+      setPassword('');
+      setConfirm('');
       setTimeout(function () {
         setMsg('');
       }, 3000)
     }
-  }
+  };
+
   return (
     <div id="login" className="auth">
       <div className="form-title">Sign Up</div>

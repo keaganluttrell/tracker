@@ -21,6 +21,13 @@
   margin-bottom: 12em;
 }
 
+#error-msg-login {
+  position: absolute;
+  color: #ff4545;
+  font-size: .7rem;
+  margin-bottom: 10em;
+}
+
 .auth form {
   display: flex;
   flex-direction: column;

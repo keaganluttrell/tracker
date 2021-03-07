@@ -35,7 +35,8 @@ function useProvideAuth() {
       .then(response => {
         setUser(response.user);
         return response.user;
-      });
+      })
+      .catch(e => e);
   };
 
   const signup = (email, password) => {
