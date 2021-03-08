@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Redirect, useLocation } from 'react-router-dom';
-import { useAuth } from './auth-hook';
+import { useAuth } from '../utils/auth-hook';
 
 export default function PrivateRoute({ children, ...rest }) {
   const auth = useAuth();
-  console.log('PRIVATE', auth.user)
+  console.log('Private Route', auth.user)
   const location = useLocation();
   return (
     <Route {...rest} render={() => {

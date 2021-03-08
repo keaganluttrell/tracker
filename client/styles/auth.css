@@ -16,14 +16,14 @@
 
 #error-msg {
   position: absolute;
-  color: #ff4545;
+  color: var(--err-light);
   font-size: .7rem;
   margin-bottom: 12em;
 }
 
 #error-msg-login {
   position: absolute;
-  color: #ff4545;
+  color: var(--err-light);
   font-size: .7rem;
   margin-bottom: 10em;
 }
@@ -38,7 +38,7 @@
 
 .auth form input {
   width: 90%;
-  border: rgba(128, 128, 128, 0.565) solid 1px;
+  border: var(--border-light) solid 1px;
   font-size: 1rem;
   padding: .3rem;
   border-bottom: none;
@@ -52,14 +52,14 @@ form input:first-child {
 form input:last-child {
   border-bottom-left-radius: .2rem;
   border-bottom-right-radius: .2rem;
-  border-bottom: rgba(128, 128, 128, 0.565) solid 1px;
+  border-bottom: var(--border-light) solid 1px;
 }
 
 
 .auth button {
   width: 19rem;
-  background-color: #1c68ff;
-  color: #f4f2f2;
+  background-color: var(--blue);
+  color: var(--bg-light);
   border: none;
   border-radius: 5px;
   margin-top: 1em;
@@ -69,7 +69,7 @@ form input:last-child {
 }
 
 .auth button:hover {
-  background: radial-gradient( #4280fc, #1c68ff);
+  background: radial-gradient( var(--blue), var(--lightblue));
 }
 
 .auth-bottom-line {

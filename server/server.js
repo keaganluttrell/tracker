@@ -11,10 +11,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
-app.get('/login', (req, res) => {
-  const index = path.resolve('public', 'index.html');
-  res.sendFile(index);
-})
+app.get('/:page', (req, res) => {
+  // const page = req.params;
+  // switch (page) {
+  //   case '/tasks': res.redirect('/tasks');
+  //     return;
+  //   default:
+      res.redirect('/');
+  // }
+});
+
 
 const PORT = process.env.PORT || 80;
 app.listen(PORT, console.log('listening...', PORT));

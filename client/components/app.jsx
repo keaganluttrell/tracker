@@ -5,11 +5,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { ProvideAuth } from './auth-hook';
+import { ProvideAuth } from '../utils/auth-hook';
 import Login from './login';
 import Signup from './signup';
 import Home from './home';
-import PrivateRoute from './private-route';
+import PrivateRoute from '../utils/private-route';
 
 export default function App() {
   return (
@@ -25,11 +25,11 @@ export default function App() {
             <Signup />
           </Route>
 
-          <PrivateRoute>
+          {/* <PrivateRoute> */}
             <Route exact path="/">
               <Home />
             </Route>
-          </PrivateRoute>
+          {/* </PrivateRoute> */}
 
         </Switch>
       </Router>

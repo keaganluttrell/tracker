@@ -46,7 +46,8 @@ function useProvideAuth() {
       .then(response => {
         setUser(response.user);
         return response.user;
-      });
+      })
+      .catch(e => e);
   };
 
   const signout = () => {
@@ -55,7 +56,8 @@ function useProvideAuth() {
       .signOut()
       .then(() => {
         setUser(false);
-      });
+      })
+      .catch(e => e);
   };
 
   const sendPasswordResetEmail = email => {
@@ -64,7 +66,8 @@ function useProvideAuth() {
       .sendPasswordResetEmail(email)
       .then(() => {
         return true;
-      });
+      })
+      .catch(e => e);
   };
 
   const confirmPasswordReset = (code, password) => {
@@ -73,7 +76,8 @@ function useProvideAuth() {
       .confirmPasswordReset(code, password)
       .then(() => {
         return true;
-      });
+      })
+      .catch(e => e);
   };
 
   // Subscribe to user on mount

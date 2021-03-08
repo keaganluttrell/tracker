@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Redirect, useLocation, useHistory } from 'react-router-dom';
-import { useAuth } from './auth-hook';
+import { useAuth } from '../utils/auth-hook';
 import '../styles/auth'
 
 export default function Signup() {
@@ -13,17 +13,29 @@ export default function Signup() {
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
 
-  const signup = () => {
-    history.replace(from);
+  const resetFields = () => {
+    setEmail('');
+    setPassword('');
+    setConfirm('');
+  }
+
+  const signup = async () => {
     if (password === confirm) {
-      auth.signup(email, password);
-      <Redirect to={{ pathname: "/", state: { from: location } }} />
-      // catch errors here
+      const result = await auth.signup(email, password);
+      if (result.code) {
+        resetFields();
+        setMsg('Invalid Email or Password');
+        setTimeout(function () {
+          setMsg('');
+        }, 3000);
+      } else {
+        <Redirect to={{ pathname: "/", state: { from: location } }} />
+        history.replace(from);
+        history.push('/');
+      }
     } else {
+      resetFields();
       setMsg('Passwords do not match');
-      setEmail('');
-      setPassword('');
-      setConfirm('');
       setTimeout(function () {
         setMsg('');
       }, 3000)
