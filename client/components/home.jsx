@@ -6,7 +6,7 @@ import Nav from './nav';
 import Projects from './projects';
 import Tasks from './tasks';
 import Teams from './teams';
-import Dash from './dash';
+import Dash from './dash/dash';
 
 export default function Home() {
   const auth = useAuth();
