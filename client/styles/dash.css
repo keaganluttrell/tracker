@@ -15,7 +15,7 @@
 }
 
 
-.aux-list {
+#dash-todos {
   min-width: 15em;
   width: 47%;
   background-color: white;
@@ -26,7 +26,7 @@
 
 @media screen and (max-width: 750px) {
 
-  .aux-list {
+  #dash-todos{
     width: 100%;
     margin-bottom: 1em;
   }

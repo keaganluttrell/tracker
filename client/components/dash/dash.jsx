@@ -12,17 +12,11 @@ export default function Dash() {
       <div id="welcome">
         Welcome {user?.displayName || 'User'}! You have {user?.projects || 0} open projects.
       </div>
-
-      <div className="aux-list">
-        <div className="aux-title">TITLE 1</div>
-        <div className="aux-item">ITEM</div>
-        <div className="aux-item">ITEM</div>
-        <div className="aux-item">ITEM</div>
-      </div>
-
       <div id="dash-todos">
         {sampleData.map(data => {
-
+          //create a list component
+          //create an item component
+          return <div>{data.text}</div>
         })}
       </div>
 
