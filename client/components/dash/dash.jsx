@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth } from '../../utils/auth-hook';
 import '../../styles/dash';
 import sampleData from '../../../database/todo-sample';
-
+import List from './list';
 
 export default function Dash() {
   const { user } = useAuth();
@@ -12,14 +12,7 @@ export default function Dash() {
       <div id="welcome">
         Welcome {user?.displayName || 'User'}! You have {user?.projects || 0} open projects.
       </div>
-      <div id="dash-todos">
-        {sampleData.map(data => {
-          //create a list component
-          //create an item component
-          return <div>{data.text}</div>
-        })}
-      </div>
-
+      <List data={sampleData} />
     </div>
   );
 };
