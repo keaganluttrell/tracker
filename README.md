@@ -31,7 +31,7 @@ then to bundle this application run:
 npm run build
 ```
 
-then start the server!
+then start the server
 
 ```
 npm start
